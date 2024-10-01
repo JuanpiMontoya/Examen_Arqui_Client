@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Client Service
+
+server:
+  port: 8083
