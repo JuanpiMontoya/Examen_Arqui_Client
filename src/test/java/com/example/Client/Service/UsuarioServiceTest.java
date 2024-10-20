@@ -1,5 +1,6 @@
 package com.example.Client.Service;
 
+import com.example.Client.Service.model.UsuarioDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -20,9 +21,14 @@ public class UsuarioServiceTest {
         String apellidoPaterno = "Perez";
         String apellidoMaterno = "Garcia";
         String documentoIdentidad = "12345678";
+        UsuarioDto usuarioDto = new UsuarioDto();
+        usuarioDto.setNombre(nombre);
+        usuarioDto.setApellidoPaterno(apellidoPaterno);
+        usuarioDto.setApellidoMaterno(apellidoMaterno);
+        usuarioDto.setDocumentoIdentidad(documentoIdentidad);
 
         // Act
-        Usuario usuario = usuarioService.crearUsuario(nombre, apellidoPaterno, apellidoMaterno, documentoIdentidad);
+        Usuario usuario = usuarioService.crearUsuario(usuarioDto);
 
         // Assert
         assertEquals(nombre, usuario.getNombre());
